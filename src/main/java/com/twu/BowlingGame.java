@@ -15,18 +15,18 @@ public class BowlingGame {
 
     public int score() {
         int score = 0;
-        int frameIndex = 0;
+        int roundIndex = 0;
         for (int frame = 0; frame < 10; frame++){
 
-            if (isStrike(frameIndex)){
-                   score += 10 + getStrikeScore(frameIndex);
-                   frameIndex++;
-            } else if(isSpare(frameIndex)){
-                   score += 10 +getSpareScore(frameIndex);
-                   frameIndex += 2;
+            if (isStrike(roundIndex)){
+                   score += 10 + getStrikeScore(roundIndex);
+                   roundIndex++;
+            } else if(isSpare(roundIndex)){
+                   score += 10 +getSpareScore(roundIndex);
+                   roundIndex += 2;
             }else {
-                   score += getMissScore(frameIndex);
-                   frameIndex += 2;
+                   score += getMissScore(roundIndex);
+                   roundIndex += 2;
             }
         }
          return score;
